@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Booking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>    
+            body {
+            font-family: Arial, sans-serif;
+            background: url('https://images.unsplash.com/photo-1527839321757-ad3a2f2be351?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dHJhaW4lMjBzdGF0aW9ufGVufDB8fDB8fHww') no-repeat center center fixed;
+            background-size: cover;
+            padding: 20px;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            position: relative;
+        }
+        .navbar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #000000;
+            font-size: 18px;
+            font-weight: bold;
+            padding-bottom: 5px;
+        }
+        .navbar a.active {
+            border-bottom: 2px solid #007bff;
+        }
+        .header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 64px;
+            font-family: "Brush Script MT", cursive;
+            color: #007bff;
+            text-shadow: 4px 4px 2px rgba(0,0,0,0.3);
+        }
+        .actions {
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .actions span {
+            color: #ffffff;
+        }
+
+        .actions img {
+            width: 24px;
+            height: 16px;
+        }
+
+
+        .container {
+            width: 500px;
+            background: rgba(255, 255, 255, 1.0);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            position: absolute;
+            top: 120px;
+            left: 50px;
+        }
+        h1 {
+            text-align: left;
+            color: #333;
+        }
+        .highlight {
+            color: #007bff;
+            font-weight: bold;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+        }
+        input, select, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #departure {
+            width: 35%;
+        }
+
+        #class {
+            width: 30%;
+        }
+
+        #passengers {
+            width: 20%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+        }
+
+        .footer nav{
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="header">TrainGO</div>
+
+<div class="actions">
+    <span class="fa fa-search"></span>
+    <span>|</span>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/Flag_of_Egypt.svg" alt="Egypt Flag">
+    <span>|</span>
+    <button>Login/SignUp</button>
+</div>
+
+<div class="navbar">
+    <a href="#" class="active">Home</a>
+    <a href="#">About</a>
+    <a href="#">Service</a>
+    <a href="#">Contact</a>
+</div>
+
+<div class="container">
+    <h1>Where do you <span class="highlight">Like to Go</span></h1>
+    <form>
+        <label for="from">From</label>
+        <input type="text" id="from" name="from" required>
+
+        <label for="to">To</label>
+        <input type="text" id="to" name="to" required>
+
+        <nav>
+            <label for="departure">Departure Date</label>
+            <label for="class">Class</label>
+            <label for="passengers">Passengers</label>
+        </nav>
+        <nav>
+            <input type="date" id="departure" name="departure" required>
+            <select id="class" name="class" required>
+                <option value="economy">Economy</option>
+                <option value="business">Business</option>
+                <option value="first">First Class</option>
+            </select>
+            <input type="number" id="passengers" name="passengers" min="1" required>
+        </nav>
+
+        <div>
+            <label>
+                <input type="radio" id="one-way" name="trip-type" value="one-way" required> One Way
+            </label>
+            <label>
+                <input type="radio" id="round-trip" name="trip-type" value="round-trip" required> Round Trip
+            </label>
+        </div>
+
+
+        <button type="submit">Book Now</button>
+    </form>
+</div>
+
+<div class="footer">
+    <nav>
+        <a href="#">FaceBook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+    </nav>
+</body>
+
+</html>
